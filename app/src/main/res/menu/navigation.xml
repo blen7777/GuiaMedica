@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">>
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_medicos"
         android:icon="@drawable/ic_medic"
+        app:showAsAction="ifRoom"
         android:title="@string/title_medicos" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_especialidades"
         android:icon="@drawable/ic_doctor"
+        app:showAsAction="ifRoom"
         android:title="@string/title_especialidades" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_favoritos"
         android:icon="@drawable/ic_hart"
+        app:showAsAction="ifRoom"
         android:title="@string/title_favoritos" />
 
 </menu>

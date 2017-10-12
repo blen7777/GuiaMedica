@@ -1,49 +1,48 @@
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="5dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="3dp"
     android:id="@+id/card_view_categories"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    card_view:cardElevation="12dp"
     card_view:contentPaddingBottom="4dp"
     card_view:contentPaddingLeft="4dp"
+    card_view:cardElevation="8dp"
+    card_view:layout_optimizationLevel="chains"
     card_view:contentPaddingRight="4dp"
     card_view:contentPaddingTop="4dp"
-    card_view:cardCornerRadius="2dp">
+    card_view:cardPreventCornerOverlap="true"
+    tools:context=".Principal">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:padding="8dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="6dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_gravity="center"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@mipmap/profile"
-                    android:foregroundGravity="center"
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/imgRow"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:id="@+id/profilePictureHome"
-                    app:civ_border_width="4dp"
-                    android:elevation="22dp"
-                    app:civ_border_color="#11ffffff"/>
+                    android:elevation="2dp"
+                    android:foregroundGravity="center"
+                    android:src="@mipmap/profile"
+                    app:civ_border_color="#11ffffff"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="4dp" />
 
             </LinearLayout>
 
@@ -54,25 +53,37 @@
                 android:layout_marginLeft="12dp"
                 android:orientation="vertical">
 
-
                 <TextView
-                    android:id="@+id/MedicName"
+                    android:id="@+id/fullNameRow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:textStyle="bold"
                     android:layout_weight="1"
                     android:text="Jose Ruben Lopez Menjivar"
-                    android:textSize="16sp" />
+                    android:textColor="@color/colorPrimaryLight"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
 
                 <TextView
-                    android:id="@+id/MedicEspecialidad"
+                    android:id="@+id/idRow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Medico General"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/especialidadRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Medico General"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="14sp" />
+                    android:textColor="@color/material_light_hint_text"
+                    android:textSize="14sp"
+                    android:typeface="sans" />
 
 
             </LinearLayout>
@@ -83,33 +94,76 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal"
+            android:padding="4dp">
 
-            <IconTextView
-                android:id="@+id/MedicCiudad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:layout_gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="{fa-map-marker} San Salvador"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp"/>
+                android:orientation="horizontal">
+
+                <IconTextView
+                    android:id="@+id/ciudadRowLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="{fa-map-marker}"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
 
 
-            <IconTextView
-                android:id="@+id/MedicTelefono"
-                android:layout_width="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="{fa-phone} 7777-8888"
+                <IconTextView
+                    android:id="@+id/ciudadRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:text="San Salvador"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp" />
+                android:orientation="horizontal">
+
+                <IconTextView
+                    android:id="@+id/telefonoRowLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="{fa-phone}"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <IconTextView
+                    android:id="@+id/telefonoRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:text="7777-8888"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
+
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

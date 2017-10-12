@@ -8,72 +8,50 @@ import com.orm.SugarRecord;
 
 public class Medico extends SugarRecord
 {
-    String nombres, apellidos, telefono, direccion, correo, genero, especialidad, servicios, latitude, longitude, horario;
+    String idMedico, titulo, fullName, especialidad, latitude, longitude, foto, educacion, direccion, especialidadDesc, telefono, email, servicios;
 
     public Medico()
     {
     }
 
-    public Medico(String nombres, String apellidos, String telefono, String direccion, String correo, String genero, String especialidad, String servicios, String latitude, String longitude, String horario) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.correo = correo;
-        this.genero = genero;
+    public Medico(String idMedico, String titulo, String fullName, String especialidad, String latitude, String longitude, String foto, String educacion, String direccion, String especialidadDesc, String telefono, String email, String servicios) {
+        this.idMedico = idMedico;
+        this.titulo = titulo;
+        this.fullName = fullName;
         this.especialidad = especialidad;
-        this.servicios = servicios;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.horario = horario;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
+        this.foto = foto;
+        this.educacion = educacion;
         this.direccion = direccion;
+        this.especialidadDesc = especialidadDesc;
+        this.telefono = telefono;
+        this.email = email;
+        this.servicios = servicios;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getIdMedico() {
+        return idMedico;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setIdMedico(String idMedico) {
+        this.idMedico = idMedico;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEspecialidad() {
@@ -82,14 +60,6 @@ public class Medico extends SugarRecord
 
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
-    }
-
-    public String getServicios() {
-        return servicios;
-    }
-
-    public void setServicios(String servicios) {
-        this.servicios = servicios;
     }
 
     public String getLatitude() {
@@ -108,11 +78,59 @@ public class Medico extends SugarRecord
         this.longitude = longitude;
     }
 
-    public String getHorario() {
-        return horario;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getEducacion() {
+        return educacion;
+    }
+
+    public void setEducacion(String educacion) {
+        this.educacion = educacion;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getEspecialidadDesc() {
+        return especialidadDesc;
+    }
+
+    public void setEspecialidadDesc(String especialidadDesc) {
+        this.especialidadDesc = especialidadDesc;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getServicios() {
+        return servicios;
+    }
+
+    public void setServicios(String servicios) {
+        this.servicios = servicios;
     }
 }

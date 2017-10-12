@@ -1,8 +1,11 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_marginTop="57dp"
     android:fillViewport="false">
 
         <LinearLayout
@@ -20,14 +23,14 @@
                 android:padding="30dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profilePictureHome"
+                    android:id="@+id/MedicFoto"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="12dp"
                     app:elevation="20dp"
                     android:foregroundGravity="center"
-                    android:src="@mipmap/profile"
+                    android:src="@mipmap/manager"
                     app:civ_border_color="#11ffffff"
                     app:civ_border_width="4dp" />
 
@@ -81,11 +84,11 @@
                     android:tint="#fff"
                     android:gravity="center"
                     android:id="@+id/call"
-                    android:src="@drawable/ic_call"/>
+                    app:srcCompat="@drawable/ic_call"/>
 
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/goLocation"
-                    android:src="@drawable/ic_if_map_2561464"
+                    app:srcCompat="@drawable/ic_if_map_2561464"
                     android:layout_width="60dp"
                     android:layout_marginTop="5dp"
                     android:layout_height="60dp"
@@ -101,7 +104,7 @@
 
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/calendar"
-                    android:src="@drawable/ic_if_calendar_465050"
+                    app:srcCompat="@drawable/ic_if_calendar_465050"
                     android:layout_width="60dp"
                     android:layout_marginTop="5dp"
                     android:layout_height="60dp"
@@ -117,7 +120,7 @@
 
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/favorite"
-                    android:src="@drawable/ic_favorite"
+                    app:srcCompat="@drawable/ic_favorite"
                     android:layout_width="60dp"
                     android:layout_marginTop="5dp"
                     android:layout_height="60dp"
@@ -151,18 +154,18 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:layout_margin="4dp"
-                    android:layout_gravity="right"
+                    android:gravity="end"
+                    android:layout_margin="6dp"
+                    android:layout_gravity="end"
                     android:orientation="horizontal">
 
                     <android.support.design.widget.FloatingActionButton
                         xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:padding="1dp"
                         android:background="#fff"
-                        android:src="@drawable/ic_if_compose_465052"
+                        app:srcCompat="@drawable/ic_if_compose_465052"
                         android:tint="#fff"
                         android:scaleType="center"
                         app:elevation="2dp" />
@@ -176,22 +179,26 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
-                        android:text="EDUCACION"
+                        android:text="PERFIL"
+                        android:textSize="16sp"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/educacion"
-                        android:textColor="#121111"
-                        android:fontFamily="sans-serif-light"
+                        android:id="@+id/MedicPerfil"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:typeface="sans"
+                        android:textSize="15sp"
+                        android:textColor="@color/material_light_hint_text"
                         android:text="1990-1998 Universidad Salvadoreña Alberto Masferrer. Diploma de Medico y Cirujano.
 2001-2003 Hospital Nacional de Niños Benjamín Bloom, Universidad Nacional de El Salvador. Diploma de Pediatra.
-2005-2007 Hospital Edouard Herriot, Universidad Claude Bernard Lyon I. Francia. Diploma de Gastroenterología, Hepatología y Nutrición." />
+2005-2007 Hospital Edouard Herriot, Universidad Claude Bernard Lyon I. Francia. Diploma de Gastroenterología, Hepatología y Nutrición."
+                        />
 
 
                 </LinearLayout>
@@ -215,18 +222,18 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:layout_margin="4dp"
-                    android:layout_gravity="right"
+                    android:gravity="end"
+                    android:layout_margin="6dp"
+                    android:layout_gravity="end"
                     android:orientation="horizontal">
 
                     <android.support.design.widget.FloatingActionButton
                         xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:padding="1dp"
                         android:background="#fff"
-                        android:src="@drawable/ic_information"
+                        app:srcCompat="@drawable/ic_if_compose_465052"
                         android:tint="#fff"
                         app:elevation="2dp"
                         android:scaleType="center"/>
@@ -244,111 +251,162 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:textStyle="bold"
+                        android:textSize="16sp"
                         android:textColor="@color/colorPrimaryDark"
                         android:text="INFORMACION"/>
 
+
+                <!--   Variables ocultas -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/direccion"
-                        android:textColor="#121111"
-                        android:fontFamily="sans-serif-light"
-                        android:text="DIRECCION: Suchitoto, Bario calvario cuscatlan."/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/especialidad"
-                        android:textColor="#121111"
-                        android:fontFamily="sans-serif-light"
-                        android:text="ESPECIALIDAD: General ,  Medicina mente-cuerpo ,  Medicina integrativa"/>
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/telefonos"
-                        android:textColor="#121111"
-                        android:fontFamily="sans-serif-light"
-                        android:text="TELEFONO: 7647-1451"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/email"
-                        android:textColor="#121111"
-                        android:fontFamily="sans-serif-light"
-                        android:text="CORREO ELECTRONICO: blen7777@gmail.com"/>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/serviciosCard"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:elevation="2dp"
-                android:scaleType="center"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="2dp"
-                app:contentPaddingBottom="4dp"
-                app:contentPaddingLeft="4dp"
-                app:contentPaddingRight="4dp"
-                app:contentPaddingTop="4dp">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_margin="4dp"
-                    android:gravity="right"
-                    android:orientation="horizontal">
-
-                    <android.support.design.widget.FloatingActionButton xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="right"
                         android:layout_marginBottom="12dp"
-                        android:background="#fff"
-                        app:elevation="2dp"
-                        android:scaleType="center"
-                        android:foregroundGravity="right"
-                        android:padding="3dp"
-                        android:src="@drawable/ic_if_plus"
-                        android:tint="#fff" />
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:id="@+id/idMedico"
+                        android:text="1"/>
 
-                </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:id="@+id/callNum"
+                        android:text="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:id="@+id/MedicLatitude"
+                        android:text="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:id="@+id/MedicLongitude"
+                        android:text="1"/>
+
+                    <!-- END -->
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <IconTextView
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:text="SERVICIOS"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/serviciosList"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:textSize="30sp"
+                        android:textColor="@color/colorAccent"
                         android:fontFamily="sans-serif-light"
-                        android:text="Consulta médica general.
-Tratamiento de presión arterial alta y problemas metabólicos.
-Manejo de trastornos del sueño.
-Manejo del estrés.
-Orientación nutricional.
-Fitoterapia.
-Homotoxicología.
-Terapia Neural.
-Flores de Bach."
-                        android:textColor="#121111" />
+                        android:text="{fa-map-marker}"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:id="@+id/MedicDireccion"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="8dp"
+                        android:typeface="sans"
+                        android:textSize="17sp"
+                        android:textColor="@color/material_light_hint_text"
+                        android:text="DIRECCION: Suchitoto, Bario calvario cuscatlan."/>
+
+                </LinearLayout>
+
+                    <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <IconTextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:textSize="30sp"
+                        android:textColor="@color/colorAccent"
+                        android:fontFamily="sans-serif-light"
+                        android:text="{fa-info}"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/MedicEspe"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginStart="8dp"
+                            android:typeface="sans"
+                            android:padding="4dp"
+                            android:textSize="17sp"
+                            android:textColor="@color/material_light_hint_text"
+                            android:text="General ,  Medicina mente-cuerpo ,  Medicina integrativa"/>
+
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <IconTextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:textSize="30sp"
+                        android:textColor="@color/colorAccent"
+                        android:fontFamily="sans-serif-light"
+                        android:text="{fa-phone}"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:typeface="sans"
+                        android:textSize="17sp"
+                        android:id="@+id/MedicTelefonos"
+                        android:padding="4dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/material_light_hint_text"
+                        android:text="TELEFONO: 7647-1451"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <IconTextView
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:textSize="30sp"
+                            android:textColor="@color/colorAccent"
+                            android:fontFamily="sans-serif-light"
+                            android:text="{fa-envelope}"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:typeface="sans"
+                            android:textSize="17sp"
+                            android:id="@+id/MedicEmail"
+                            android:layout_marginStart="8dp"
+                            android:padding="4dp"
+                            android:layout_marginTop="14dp"
+                            android:textColor="@color/material_light_hint_text"
+                            android:text="blen7777@gmail.com"/>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>

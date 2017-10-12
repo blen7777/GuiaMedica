@@ -1,0 +1,23 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2">
+
+        <android.support.v7.widget.RecyclerView
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/recycler_especialidades"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            tools:context="com.medicossv.medicosinfo.guiamedica.fragments.Especialidad_list" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

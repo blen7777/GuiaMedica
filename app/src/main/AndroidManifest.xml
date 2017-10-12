@@ -53,30 +53,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserHome"
-            android:label="@string/title_activity_tabs_home"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".HomeList"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Profile"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity
-            android:name=".Especialidad_list"
-            android:label="Especialidades"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-
-        <activity
-            android:name=".Medicos_list"
-            android:label="Medicos SV"
-            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Principal" />
 
         </activity>
 
@@ -84,6 +66,7 @@
             android:name=".Principal"
             android:label="Medicos SV"
             android:theme="@style/AppTheme.NoActionBar">
+
 
         </activity>
     </application>

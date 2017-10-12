@@ -9,15 +9,16 @@ import com.orm.SugarRecord;
 public class Especialidad extends SugarRecord
 {
 
-    String nombre, count;
+    String nombre, count, idEspecialidad;
 
     public Especialidad()
     {
     }
 
-    public Especialidad(String nombre, String count) {
+    public Especialidad(String nombre, String count, String idEspecialidad) {
         this.nombre = nombre;
         this.count = count;
+        this.idEspecialidad = idEspecialidad;
     }
 
     public String getNombre() {
@@ -34,5 +35,13 @@ public class Especialidad extends SugarRecord
 
     public void setCount(String count) {
         this.count = count;
+    }
+
+    public String getIdEspecialidad() {
+        return idEspecialidad;
+    }
+
+    public void setIdEspecialidad(String idEspecialidad) {
+        this.idEspecialidad = idEspecialidad;
     }
 }

@@ -17,8 +17,8 @@
         pv:pv_background_color="#2c6cab"
         pv:pv_host_text_size="50sp"
         pv:pv_particle_text="sv"
-        pv:pv_text_anim_time="2000"
-        pv:pv_spread_anim_time="1000"
-        pv:pv_host_text_anim_time="2000" />
+        pv:pv_text_anim_time="1000"
+        pv:pv_spread_anim_time="500"
+        pv:pv_host_text_anim_time="1000" />
 
 </LinearLayout>

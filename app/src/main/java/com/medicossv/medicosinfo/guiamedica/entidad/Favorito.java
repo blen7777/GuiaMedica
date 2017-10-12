@@ -8,9 +8,16 @@ import com.orm.SugarRecord;
 
 public class Favorito extends SugarRecord
 {
-    String id_medico,nombreCompleto, especialidad, telefono, ciudad, foto;
+    String id_medico,nombreCompleto, especialidad, foto;
 
     public Favorito() {
+    }
+
+    public Favorito(String id_medico, String nombreCompleto, String especialidad, String foto) {
+        this.id_medico = id_medico;
+        this.nombreCompleto = nombreCompleto;
+        this.especialidad = especialidad;
+        this.foto = foto;
     }
 
     public String getId_medico() {
@@ -35,22 +42,6 @@ public class Favorito extends SugarRecord
 
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
     }
 
     public String getFoto() {
