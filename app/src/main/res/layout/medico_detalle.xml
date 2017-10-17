@@ -5,7 +5,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:layout_marginTop="57dp"
     android:fillViewport="false">
 
         <LinearLayout
@@ -19,7 +18,7 @@
                 android:layout_height="fill_parent"
                 android:background="@drawable/fondo_header"
                 android:orientation="vertical"
-                android:elevation="1dp"
+                app:elevation="10dp"
                 android:padding="30dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -29,6 +28,8 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="12dp"
                     app:elevation="20dp"
+                    app:civ_border_overlay="true"
+                    app:civ_fill_color="@color/colorPrimary"
                     android:foregroundGravity="center"
                     android:src="@mipmap/manager"
                     app:civ_border_color="#11ffffff"
@@ -48,6 +49,17 @@
 
                 <TextView
                     android:id="@+id/MedicEspecialidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:singleLine="false"
+                    android:text="Medico General"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/MedicMunicipio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -84,6 +96,7 @@
                     android:tint="#fff"
                     android:gravity="center"
                     android:id="@+id/call"
+                    android:onClick="DoCall"
                     app:srcCompat="@drawable/ic_call"/>
 
                 <android.support.design.widget.FloatingActionButton
@@ -98,6 +111,7 @@
                     app:elevation="12dp"
                     android:scaleType="center"
                     android:padding="2dp"
+                    android:onClick="GoMaps"
                     android:layout_gravity="center"
                     android:tint="#fff"
                     android:gravity="center" />
@@ -118,7 +132,7 @@
                     android:tint="#fff"
                     android:gravity="center" />
 
-                <android.support.design.widget.FloatingActionButton
+               <android.support.design.widget.FloatingActionButton
                     android:id="@+id/favorite"
                     app:srcCompat="@drawable/ic_favorite"
                     android:layout_width="60dp"
@@ -130,6 +144,7 @@
                     android:scaleType="center"
                     android:padding="2dp"
                     app:elevation="12dp"
+                    android:onClick="AddFavorite"
                     android:layout_gravity="center"
                     android:tint="#fff"
                     android:gravity="center"/>
@@ -173,8 +188,8 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -188,17 +203,11 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <WebView
                         android:id="@+id/MedicPerfil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:typeface="sans"
-                        android:textSize="15sp"
-                        android:textColor="@color/material_light_hint_text"
-                        android:text="1990-1998 Universidad Salvadoreña Alberto Masferrer. Diploma de Medico y Cirujano.
-2001-2003 Hospital Nacional de Niños Benjamín Bloom, Universidad Nacional de El Salvador. Diploma de Pediatra.
-2005-2007 Hospital Edouard Herriot, Universidad Claude Bernard Lyon I. Francia. Diploma de Gastroenterología, Hepatología y Nutrición."
-                        />
+                        android:layout_width="fill_parent"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:layout_height="fill_parent" />
 
 
                 </LinearLayout>

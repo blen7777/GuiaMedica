@@ -3,9 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.medicossv.medicosinfo.guiamedica">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
     <!-- Internet Permission -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Network State permission -->
@@ -18,8 +23,8 @@
     <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name="com.orm.SugarApp"
@@ -54,21 +59,37 @@
         </activity>
         <activity
             android:name=".Profile"
-            android:label="@string/title_activity_main"
+            android:label="Perfil medico"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Principal" />
-
         </activity>
+        <activity android:name=".Principal"></activity>
+        <activity
+            android:name=".MedicosByEspecialidad"
+            android:label="Medicos por especialidad"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Principal" />
+        </activity>
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Principal"
-            android:label="Medicos SV"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
+            android:name=".Mapa"
+            android:label="@string/title_activity_mapa"></activity>
     </application>
 
 </manifest>

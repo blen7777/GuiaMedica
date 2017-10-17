@@ -12,10 +12,12 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.IconTextView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -26,11 +28,13 @@ import com.android.volley.toolbox.Volley;
 import com.medicossv.medicosinfo.guiamedica.ArrayData.ArrayMedicos;
 import com.medicossv.medicosinfo.guiamedica.R;
 import com.medicossv.medicosinfo.guiamedica.adapters.AdapterRowMedicos;
+import com.medicossv.medicosinfo.guiamedica.entidad.Medico;
 import com.medicossv.medicosinfo.guiamedica.entidad.MedicoRow;
 
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.zip.Inflater;
 
 public class Medicos_list extends Fragment
@@ -47,6 +51,7 @@ public class Medicos_list extends Fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -98,5 +103,48 @@ public class Medicos_list extends Fragment
 
         queue.add(request);
     }
+
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        inflater.inflate(R.menu.menu_main, menu);
+        MenuItem item = menu.findItem(R.id.menuSearch);
+        android.widget.SearchView searchView = (android.widget.SearchView) item.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText)
+            {
+                final ArrayList<MedicoRow> filteredModelList = filter(dataset, newText);
+
+                adapterRowMedicos.setFilter(filteredModelList);
+                return true;
+
+            }
+
+        });
+        super.onCreateOptionsMenu(menu, inflater);
+
+    }
+
+    private ArrayList<MedicoRow> filter(ArrayList<MedicoRow> models, String query) {
+        query = query.toLowerCase();
+        final ArrayList<MedicoRow> filteredModelList = new ArrayList<>();
+        for (MedicoRow medico : models) {
+            final String text = medico.getNombreCompleto().toLowerCase();
+            if (text.contains(query)) {
+                filteredModelList.add(medico);
+            }
+        }
+        return filteredModelList;
+    }
+
+
 
 }

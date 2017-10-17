@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class AdapterRowMedicos extends RecyclerView.Adapter<AdapterRowMedicos.ViewHolder>
 {
-    private final ArrayList<MedicoRow> medicoRows;
+    private ArrayList<MedicoRow> medicoRows;
     private final int itemLayout;
     public  View view;
 
@@ -43,7 +43,6 @@ public class AdapterRowMedicos extends RecyclerView.Adapter<AdapterRowMedicos.Vi
         public ViewHolder(View itemView)
         {
             super(itemView);
-
             idRow = itemView.findViewById(R.id.idRow);
             fullaName = itemView.findViewById(R.id.fullNameRow);
            // foto = itemView.findViewById(R.id.imgRow);
@@ -51,12 +50,13 @@ public class AdapterRowMedicos extends RecyclerView.Adapter<AdapterRowMedicos.Vi
             ciudad = itemView.findViewById(R.id.ciudadRow);
             telefono = itemView.findViewById(R.id.telefonoRow);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener()
+            {
                 @Override public void onClick(View v)
                 {
 
                     Intent link = new Intent(v.getContext(), Profile.class);
-                    link.putExtra("medicID", 17);
+                    link.putExtra("medicID", idRow.getText().toString());
                     v.getContext().startActivity(link);
                 }
             });
@@ -86,6 +86,13 @@ public class AdapterRowMedicos extends RecyclerView.Adapter<AdapterRowMedicos.Vi
     @Override
     public int getItemCount() {
         return medicoRows.size();
+    }
+
+    public void setFilter(ArrayList<MedicoRow> newMedico)
+    {
+        medicoRows = new ArrayList<>();
+        medicoRows.addAll(newMedico);
+        notifyDataSetChanged();
     }
 
 

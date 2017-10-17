@@ -33,7 +33,7 @@ public class AdapterFavorito extends RecyclerView.Adapter<AdapterFavorito.ViewHo
     {
         public  final TextView idFavorito;
         public  final TextView fullaName;
-        public  final IconTextView foto;
+        //public  final IconTextView foto;
         public  final TextView especialidad;
 
         public ViewHolder(View itemView)
@@ -42,7 +42,7 @@ public class AdapterFavorito extends RecyclerView.Adapter<AdapterFavorito.ViewHo
 
             idFavorito = itemView.findViewById(R.id.idFavorito);
             fullaName = itemView.findViewById(R.id.NameFavorito);
-            foto = itemView.findViewById(R.id.imgfavorito);
+            //foto = itemView.findViewById(R.id.imgfavorito);
             especialidad = itemView.findViewById(R.id.especialidadFavorito);
 
             itemView.setOnClickListener(new View.OnClickListener()
@@ -68,7 +68,7 @@ public class AdapterFavorito extends RecyclerView.Adapter<AdapterFavorito.ViewHo
         Favorito favorito = favoritos.get(i);
         viewHolder.idFavorito.setText(favorito.getId_medico());
         viewHolder.fullaName.setText(favorito.getNombreCompleto());
-        viewHolder.foto.setText(favorito.getFoto());
+        //viewHolder.foto.setText(favorito.getFoto());
         viewHolder.especialidad.setText(favorito.getEspecialidad());
 
     }

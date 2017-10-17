@@ -1,5 +1,6 @@
 package com.medicossv.medicosinfo.guiamedica.adapters;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.IconTextView;
 import android.widget.TextView;
 
+import com.medicossv.medicosinfo.guiamedica.MedicosByEspecialidad;
+import com.medicossv.medicosinfo.guiamedica.Profile;
 import com.medicossv.medicosinfo.guiamedica.R;
 import com.medicossv.medicosinfo.guiamedica.entidad.Especialidad;
 import com.medicossv.medicosinfo.guiamedica.entidad.Favorito;
@@ -47,7 +50,9 @@ public class AdapterEspecialidad extends RecyclerView.Adapter<AdapterEspecialida
             {
                 @Override public void onClick(View v)
                 {
-
+                    Intent link = new Intent(v.getContext(), MedicosByEspecialidad.class);
+                    link.putExtra("espeID", idEspecialidad.getText().toString());
+                    v.getContext().startActivity(link);
                 }
             });
         }

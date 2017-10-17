@@ -1,13 +1,15 @@
 package com.medicossv.medicosinfo.guiamedica;
 
+import android.Manifest;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.medicossv.medicosinfo.guiamedica.actions.GetPermission;
 import me.wangyuwei.particleview.ParticleView;
 
-public class Splash extends AppCompatActivity {
+public class Splash extends AppCompatActivity{
 
     ParticleView mPvGithub;
 
@@ -15,8 +17,8 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_splash);
+
 
         mPvGithub = (ParticleView) findViewById(R.id.pv_1);
 
@@ -32,4 +34,5 @@ public class Splash extends AppCompatActivity {
         });
 
     }
+
 }
